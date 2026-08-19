@@ -25,7 +25,7 @@ const ICONS = {
   chat: MessageSquare,
 } as const;
 
-function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
+function NavLinks({ onNavigate }: { onNavigate?: (() => void) | undefined }) {
   const pathname = useRouterState({ select: (state) => state.location.pathname });
 
   const item = (to: string, label: string, Icon: typeof Mail) => {
@@ -62,7 +62,7 @@ function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
   );
 }
 
-function SidebarInner({ onNavigate }: { onNavigate?: () => void }) {
+function SidebarInner({ onNavigate }: { onNavigate?: (() => void) | undefined }) {
   return (
     <div className="flex h-full flex-col gap-6 bg-sidebar p-4 text-sidebar-foreground">
       <Link to="/" onClick={onNavigate} className="flex items-center gap-3 px-2 py-1">
