@@ -73,33 +73,33 @@ export function buildUserPrompt(
     case "email":
       return (
         `Write an email for this situation:\n"""\n${input}\n"""\n\n` +
-        line("Tone", options.tone) +
-        line("Recipient", options.recipient) +
-        line("Length", options.length) +
-        line("Desired outcome / call to action", options.goal) +
-        line("Sender name to sign off with", options.sender)
+        line("Tone", options['tone']) +
+        line("Recipient", options['recipient']) +
+        line("Length", options['length']) +
+        line("Desired outcome / call to action", options['goal']) +
+        line("Sender name to sign off with", options['sender'])
       );
     case "summarize":
       return (
         `Analyse these meeting notes / transcript:\n"""\n${input}\n"""\n\n` +
-        line("Meeting title", options.title) +
-        line("Attendees", options.attendees) +
-        line("Detail level", options.detail)
+        line("Meeting title", options['title']) +
+        line("Attendees", options['attendees']) +
+        line("Detail level", options['detail'])
       );
     case "planner":
       return (
         `Plan these tasks:\n"""\n${input}\n"""\n\n` +
-        line("Planning horizon", options.horizon) +
-        line("Working hours", options.hours) +
-        line("Fixed commitments (meetings etc.)", options.commitments) +
-        line("Top goal for the period", options.goal)
+        line("Planning horizon", options['horizon']) +
+        line("Working hours", options['hours']) +
+        line("Fixed commitments (meetings etc.)", options['commitments']) +
+        line("Top goal for the period", options['goal'])
       );
     case "research":
       return (
         `Research brief request:\n"""\n${input}\n"""\n\n` +
-        line("Audience", options.audience) +
-        line("Depth", options.depth) +
-        line("Specific questions to answer", options.questions)
+        line("Audience", options['audience']) +
+        line("Depth", options['depth']) +
+        line("Specific questions to answer", options['questions'])
       );
     case "chat":
       return input;
