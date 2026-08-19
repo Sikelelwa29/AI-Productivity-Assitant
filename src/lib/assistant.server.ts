@@ -6,8 +6,8 @@ import { buildUserPrompt, getSystemPrompt, type AssistantTaskId } from "./prompt
 export type RunAssistantArgs = {
   task: AssistantTaskId;
   input: string;
-  options?: Record<string, string>;
-  history?: Array<{ role: "user" | "assistant"; content: string }>;
+  options?: Record<string, string> | undefined;
+  history?: Array<{ role: "user" | "assistant"; content: string }> | undefined;
 };
 
 export async function runAssistantTask({ task, input, options, history }: RunAssistantArgs) {
